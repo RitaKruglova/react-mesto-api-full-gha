@@ -1,0 +1,23 @@
+.profile {
+  max-width: 880px;
+  width: 69vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px 0 0;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .profile {
+    width: 88vw;
+    padding: 42px 0 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,12 @@
+.authentication__error {
+  min-height: 30px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+  text-align: left;
+  width: 100%;
+  max-width: 350px;
+  margin-top: 3px;
+}
+

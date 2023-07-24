@@ -1,0 +1,10 @@
+.header__button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  padding: 0;
+}
+
+.header__button:hover {
+  cursor: pointer;
+}
