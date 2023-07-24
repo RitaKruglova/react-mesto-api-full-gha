@@ -1,6 +1,6 @@
 import { checkResponse } from "./utils";
 
-export const baseUrl = 'https://auth.nomoreparties.co';
+export const baseUrl = 'https://api.mesto.rita-kruglova.nomoredomains.xyz';
 
 export function register(email, password) {
   return fetch(`${baseUrl}/signup`, {
