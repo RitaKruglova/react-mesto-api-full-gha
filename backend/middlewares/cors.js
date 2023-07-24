@@ -1,5 +1,5 @@
 const allowedDomains = [
-  'https://mesto.rita-kruglova.nomoredomains.xyz/',
+  'https://mesto.rita-kruglova.nomoredomains.xyz',
   'localhost:3000',
 ];
 
