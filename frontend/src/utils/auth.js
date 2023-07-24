@@ -10,7 +10,7 @@ export function register(email, password) {
     },
     body: JSON.stringify({email, password}),
     mode: 'cors',
-    credentials: true
+    credentials: 'include'
   })
     .then(checkResponse)
     .then(res => res)
@@ -24,7 +24,7 @@ export function authorise(email, password) {
     },
     body: JSON.stringify({email, password}),
     mode: 'cors',
-    credentials: true
+    credentials: 'include'
   })
     .then(checkResponse)
     .then(data => {
@@ -41,7 +41,7 @@ export function getToken(token) {
       "Authorization" : `Bearer ${token}`,
     },
     mode: 'cors',
-    credentials: true
+    credentials: 'include'
   })
     .then(checkResponse)
     .then(data => data)
