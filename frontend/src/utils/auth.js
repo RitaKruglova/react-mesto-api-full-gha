@@ -7,7 +7,6 @@ export function register(email, password) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      origin: 'https://mesto.rita-kruglova.nomoredomains.xyz/'
     },
     body: JSON.stringify({email, password}),
     mode: 'cors'
@@ -21,7 +20,6 @@ export function authorise(email, password) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      origin: 'https://mesto.rita-kruglova.nomoredomains.xyz/'
     },
     body: JSON.stringify({email, password}),
     mode: 'cors'
@@ -39,7 +37,6 @@ export function getToken(token) {
     headers: {
       "Content-Type": "application/json",
       "Authorization" : `Bearer ${token}`,
-      origin: 'https://mesto.rita-kruglova.nomoredomains.xyz/'
     },
     mode: 'cors'
   })
