@@ -9,7 +9,8 @@ export function register(email, password) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({email, password}),
-    mode: 'cors'
+    mode: 'cors',
+    credentials: true
   })
     .then(checkResponse)
     .then(res => res)
@@ -22,7 +23,8 @@ export function authorise(email, password) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({email, password}),
-    mode: 'cors'
+    mode: 'cors',
+    credentials: true
   })
     .then(checkResponse)
     .then(data => {
@@ -38,7 +40,8 @@ export function getToken(token) {
       "Content-Type": "application/json",
       "Authorization" : `Bearer ${token}`,
     },
-    mode: 'cors'
+    mode: 'cors',
+    credentials: true
   })
     .then(checkResponse)
     .then(data => data)
