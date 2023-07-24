@@ -9,7 +9,8 @@ class Api {
       method,
       headers: this._headers,
       body,
-      mode: 'cors'
+      mode: 'cors',
+      credentials: true
     })
     .then(res => {
       if (res.ok) {
