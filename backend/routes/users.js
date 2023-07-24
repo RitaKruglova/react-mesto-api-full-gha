@@ -47,7 +47,7 @@ router.patch('/me', celebrate({
 }), changeUserInfo);
 router.patch('/me/avatar', celebrate({
   body: Joi.object().keys({
-    link: Joi.string().required().pattern(urlRegex),
+    avatar: Joi.string().required().pattern(urlRegex),
   }),
 }), changeAvatar);
 router.post('/signin', celebrate({
