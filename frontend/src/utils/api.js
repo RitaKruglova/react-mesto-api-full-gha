@@ -8,7 +8,8 @@ class Api {
     return fetch(`${this._baseUrl}${url}`, {
       method,
       headers: this._headers,
-      body
+      body,
+      mode: 'cors'
     })
     .then(res => {
       if (res.ok) {
