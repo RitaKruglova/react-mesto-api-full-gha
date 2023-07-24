@@ -10,6 +10,7 @@ module.exports.checkDomain = (req, res, next) => {
 
   if (allowedDomains.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
+    res.header('Access-Control-Allow-Credentials', true);
   }
 
   const requestHeaders = req.headers['access-control-request-headers'];
