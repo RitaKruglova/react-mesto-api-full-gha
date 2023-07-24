@@ -78,7 +78,8 @@ const api = new Api({
   baseUrl: 'https://api.mesto.rita-kruglova.nomoredomains.xyz',
   headers: {
     // authorization: 'b2c416ac-9733-4a5c-9da0-2148e2adbd32',
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    origin: 'https://mesto.rita-kruglova.nomoredomains.xyz/'
   }
 });
 
