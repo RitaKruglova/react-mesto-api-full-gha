@@ -1,0 +1,19 @@
+.header {
+  max-width: 880px;
+  width: 69vw;
+  padding: 45px 0 39px;
+  margin: 0 auto;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: rgba(84, 84, 84, 0.7);
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    width: 100%;
+    padding: 25px 0 23px;
+    border-width: 1px 0 1px 0;
+  }
+}

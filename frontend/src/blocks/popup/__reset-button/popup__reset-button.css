@@ -1,0 +1,26 @@
+.popup__reset-button {
+  background-image: url(../../../images/reset-button.svg);
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.0);
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  padding: 0;
+}
+
+.popup__reset-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__reset-button {
+    width: 20px;
+    height: 20px;
+    top: -36px;
+    right: 0;
+    background-size: cover;
+  }
+}

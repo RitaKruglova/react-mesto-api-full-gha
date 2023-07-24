@@ -1,0 +1,10 @@
+.header__line_place_bottom {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.header__button_opened .header__line_place_bottom {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}

@@ -1,0 +1,17 @@
+.card__recycle-bin {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-image: url(../../../images/recycle-bin-button.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 18px;
+  height: 19px;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.card__recycle-bin:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
