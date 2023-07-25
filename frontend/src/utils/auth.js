@@ -1,6 +1,6 @@
 import { checkResponse } from "./utils";
 
-export const baseUrl = 'https://api.mesto.rita-kruglova.nomoredomains.xyz';
+export const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 export function register(email, password) {
   return fetch(`${baseUrl}/signup`, {
@@ -33,12 +33,11 @@ export function authorise(email, password) {
     })
 }
 
-export function getToken(token) {
+export function getCurrentUser() {
   return fetch(`${baseUrl}/users/me`, {
     method: 'GET',
     headers: {
       "Content-Type": "application/json",
-      "Authorization" : `Bearer ${token}`,
     },
     mode: 'cors',
     credentials: 'include'

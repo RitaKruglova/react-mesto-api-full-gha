@@ -17,7 +17,7 @@ import Register from './Register';
 import ProtectedRoute from './ProtectedRoute';
 import '../App.css';
 import InfoTooltip from './InfoTooltip';
-import { getToken } from '../utils/auth';
+import { getCurrentUser } from '../utils/auth';
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -38,7 +38,6 @@ function App() {
   const [card, setCard] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const jwt = localStorage.getItem('jwt');
   
   useEffect(() => {
     api.getInitialCards()
@@ -65,19 +64,19 @@ function App() {
   }, []);
 
   function checkToken() {
-    if (jwt) {
-      getToken(jwt)
-        .then(res => {
-          if (res) {
-            // При выходе и входе с другого аккаунта, отображается в хедере старый эмейл, при перезагрузке меняется на новый
-            setEmail(res.data.email);
-            setLoggedIn(true);
-            navigate('/', {replace: true});
-            return res;
-          }
-        })
-        .catch(err => console.log(err));
-    }
+    getCurrentUser()
+      .then(res => {
+        if (res) {
+          setEmail(res.email);
+          setLoggedIn(true);
+          navigate('/', {replace: true});
+          return res;
+        }
+      })
+      .catch(err => {
+        setLoggedIn(false);
+        console.log(err);
+      });
   }
 
   function changeRegistrationState(boolean) {
@@ -153,7 +152,8 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(like => like._id === currentUser._id);
+    console.log('card', card);
+    const isLiked = card.likes.some(like => like === currentUser._id);
 
     api.changeLikeCardStatus(card._id, isLiked)
       .then(newCard => {
