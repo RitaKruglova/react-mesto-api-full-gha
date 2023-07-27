@@ -73,8 +73,9 @@ module.exports.login = (req, res, next) => {
       );
       res.cookie('token', token, {
         maxAge: 1000 * 60 * 60 * 24 * 7,
-        httpOnly: true,
-        sameSite: true,
+        httpOnly: false,
+        sameSite: 'none',
+        secure: true,
       });
       res.send(user);
     })

@@ -4,6 +4,7 @@ const errorClasses = require('../helpers/errorClasses');
 
 module.exports = (req, res, next) => {
   const { token } = req.cookies;
+  console.log(req.cookies);
   const { SECRET_KEY } = process.env;
 
   if (!token) {
