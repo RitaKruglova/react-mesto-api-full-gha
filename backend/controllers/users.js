@@ -87,3 +87,7 @@ module.exports.getCurrentUser = (req, res, next) => {
     .then((user) => handleThen(user, res))
     .catch(next);
 };
+
+module.exports.logout = (req, res, next) => {
+  res.clearCookie('token').send();
+};

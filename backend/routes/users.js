@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
 const {
-  getAllUsers, getUser, createUser, changeAvatar, changeUserInfo, login, getCurrentUser,
+  getAllUsers, getUser, createUser, changeAvatar, changeUserInfo, login, getCurrentUser, logout,
 } = require('../controllers/users');
 const { doesUserExist } = require('../middlewares/users');
 
@@ -59,5 +59,7 @@ router.post('/signin', celebrate({
     password: Joi.string().required().min(8),
   }),
 }), login);
+
+router.get('/signout', logout);
 
 module.exports = router;
