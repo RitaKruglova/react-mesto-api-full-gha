@@ -47,7 +47,7 @@ function App() {
       .catch(err => {
         console.log(err);
       })
-  }, []);
+  }, [loggedIn]);
 
   useEffect(() => {
     api.getUserInfo()
@@ -57,7 +57,7 @@ function App() {
       .catch(err => {
         console.log(err);
       })
-  }, []);
+  }, [loggedIn]);
 
   useEffect(() => {
     checkToken();

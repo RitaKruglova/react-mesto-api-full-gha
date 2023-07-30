@@ -5,7 +5,7 @@ const errorClasses = require('../helpers/errorClasses');
 module.exports = (req, res, next) => {
   const { token } = req.cookies;
   console.log(req.cookies);
-  const { SECRET_KEY } = process.env;
+  const { SECRET_KEY = 'some-secret-key' } = process.env;
 
   if (!token) {
     next(new errorClasses.UnauthorizedError('Необходима авторизация'));

@@ -64,7 +64,7 @@ module.exports.login = (req, res, next) => {
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const { SECRET_KEY } = process.env;
+      const { SECRET_KEY = 'some-secret-key' } = process.env;
 
       const token = jwt.sign(
         { _id: user._id },
