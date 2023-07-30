@@ -47,3 +47,11 @@ export function getCurrentUser() {
     .then(checkResponse)
     .then(data => data)
 }
+
+export function logout() {
+  return fetch(`${REACT_APP_BACKEND_URL}/signout`, {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'include'
+  })
+}
