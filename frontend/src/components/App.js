@@ -79,7 +79,7 @@ function App() {
       });
   }
 
-  function changeRegistrationState(boolean) {
+  function changeInfoTooltipState(boolean) {
     setIsRegistrationSuccess(boolean);
     setIsInfoTooltipPopupOpen(true);
   }
@@ -229,12 +229,22 @@ function App() {
                   />
                 }
               />
-              <Route path="/sign-in" element={<Login handleLogin={handleLogin} checkToken={checkToken} setEmail={setEmail} />} />
+              <Route
+                path="/sign-in"
+                element={
+                  <Login
+                    handleLogin={handleLogin}
+                    checkToken={checkToken}
+                    setEmail={setEmail}
+                    changeInfoTooltipState={changeInfoTooltipState}
+                  />
+                }
+              />
               <Route
                 path="sign-up"
                 element={
                   <Register
-                    changeRegistrationState={changeRegistrationState}
+                    changeRegistrationState={changeInfoTooltipState}
                   />
                 }
               />
