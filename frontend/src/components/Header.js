@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from 'react';
 import HeaderButton from './HeaderButton';
 import HeaderInfo from './HeaderInfo';
 import { LoggedInContext } from '../contexts/LoggedInContext';
+import { logout } from '../utils/auth';
 
 function Header({email, setEmail}) {
   const { loggedIn, setLoggedIn } = useContext(LoggedInContext);
@@ -26,23 +27,25 @@ function Header({email, setEmail}) {
     };
   }, []);
 
-  function logout() {
-    localStorage.removeItem('jwt');
-    navigate('/sign-in');
-    setLoggedIn(false);
-    setEmail('');
+  function handleLogout() {
+    logout()
+      .then(() => {
+        navigate('/sign-in');
+        setLoggedIn(false);
+        setEmail('');
+      });
   }
 
   return (
     <>
-      {width < 768 && isMenuOpen && loggedIn && <HeaderInfo email={email} onClick={logout} />}
+      {width < 768 && isMenuOpen && loggedIn && <HeaderInfo email={email} onClick={handleLogout} />}
       <header className="header">
         <img src={logo} alt="Логотип Место" className="header__logo" />
         <Routes>
           <Route
             path='/'
             element={
-              width > 768 ? loggedIn && <HeaderInfo email={email} onClick={logout} /> : <HeaderButton onClick={toggleMenuVisibility} isOpen={isMenuOpen} />
+              width > 768 ? loggedIn && <HeaderInfo email={email} onClick={handleLogout} /> : <HeaderButton onClick={toggleMenuVisibility} isOpen={isMenuOpen} />
             }
           >
           </Route>
