@@ -80,7 +80,6 @@ const { REACT_APP_BACKEND_URL = 'http://localhost:3000' } = process.env;
 const api = new Api({
   baseUrl: REACT_APP_BACKEND_URL,
   headers: {
-    // authorization: 'b2c416ac-9733-4a5c-9da0-2148e2adbd32',
     'Content-Type': 'application/json',
   }
 });

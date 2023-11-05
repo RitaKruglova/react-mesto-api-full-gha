@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import AuthenticationForm from "./AuthenticationForm";
 import { Link } from 'react-router-dom';
 import { register } from "../utils/auth";

@@ -1,7 +1,5 @@
 import { checkResponse } from "./utils";
 
-// export const baseUrl = process.env.REACT_APP_BACKEND_URL;
-
 const { REACT_APP_BACKEND_URL = 'http://localhost:3000' } = process.env;
 
 export function register(email, password) {
